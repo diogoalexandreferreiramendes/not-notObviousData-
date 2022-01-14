@@ -1,0 +1,23 @@
+.maindivAnalyis{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #2A5A5E;
+}
+
+.analyisForm{
+    justify-content: center;
+}
+
+.buttonAnalyis{
+    background-color: #06111C; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+}

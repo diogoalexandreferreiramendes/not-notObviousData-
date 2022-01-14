@@ -1,0 +1,55 @@
+.divSuperInput{
+    width: 100%;
+    height: 100vh;
+    background-color: #2A5A5E;
+}
+.divSignup{
+    width: 400px;
+    margin: 100px auto;
+    text-align: center;
+    position: absolute;
+    top:50%;
+    right:0;
+    left:0;
+    transform: translateY(-85%);
+}
+#signUpForm fieldset{
+    background: white;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+  /*stacking fieldsets above each other*/
+}
+
+input{
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 13px;
+}
+
+/* .divSignup{
+    position:absolute;
+    top:50%;
+    right:0;
+    left:0;
+    text-align: center;
+    transform: translateY(-75%);
+}
+input{
+    text-align: center;
+    width: 100%;
+    top: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  } */

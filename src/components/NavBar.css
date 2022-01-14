@@ -1,0 +1,41 @@
+.navbarDiv{
+    display: flex;
+    padding: 0px 30px;
+    background-color: #06111C;
+}
+
+#titleNod{
+    color:white
+}
+
+.titleLeft{
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+.titleLeft li{
+    list-style: none;
+    padding: 0px 30px 0px 0px;
+}
+
+.titleLeft li a{
+    text-decoration: none;
+    color: white;
+}
+
+.titleRight{
+    display: flex;
+    align-items: center;
+}
+
+.titleRight li{
+    list-style: none;
+    text-align: end;
+    padding: 0px 0px 0px 30px;
+}
+
+
+.titleRight li a{
+    text-decoration: none;
+    color: white;
+}

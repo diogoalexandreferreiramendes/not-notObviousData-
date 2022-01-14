@@ -1,0 +1,16 @@
+#todayDatatitle{
+    padding: 0px 0px 0px 30px;
+}
+
+.todayDataLayout{
+    display: flex;
+    padding: 0px 30px 0px 30px;
+}
+
+.todayDataLayout div{
+    flex:1;
+}
+
+#todayDataFirst{
+    
+}
