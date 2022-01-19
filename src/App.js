@@ -26,7 +26,7 @@ const App = (props) => {
 
   return(
     <Router>
-      {(process.env.NODE_ENV === 'development') ?
+      {(process.env.FUNCTIONS_EMULATOR === false) ?
       <Switch>
         <Route exact path='/' component={Intro}/>
         <Route path='/home' component={Home}/>
