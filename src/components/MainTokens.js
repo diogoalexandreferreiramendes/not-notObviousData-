@@ -21,6 +21,7 @@ const MainTokens = (props) => {
         },[props.data]
     )
 
+
     const dataConcat = () => {
         getData.push(...props.data)
         for(let i = 0; i < 10; i++){

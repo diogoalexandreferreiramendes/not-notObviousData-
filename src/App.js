@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useEffect} from 'react'
+import React from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,15 +13,20 @@ import LoginPage from './pages/LoginPage';
 import SignUp from './pages/SignUp';
 import Intro from './pages/Intro';
 import { getData } from './redux/actions/getData';
+import ConstrutionTime from './pages/ConstrutionTime';
 
 const App = (props) => {
-  useEffect(() => {
-    props.getData()
-  },[])
+  const permissson = process.env.NODE_ENV
+
+  props.getData()
 
   return(
     <Router>
-      <Switch>
+      { (permissson !== 'development') ?
+        <Switch>
+          <Route exact path='/' component={ConstrutionTime}/>
+        </Switch>
+      :<Switch>
         <Route exact path='/' component={Intro}/>
         <Route path='/home' component={Home}/>
         <Route path='/data' component={DataPage}/>
@@ -29,6 +34,7 @@ const App = (props) => {
         <Route path='/loginpage' component={LoginPage}/>
         <Route path='/signup' component={SignUp}/>
       </Switch>
+      }
     </Router>
   )
 }
