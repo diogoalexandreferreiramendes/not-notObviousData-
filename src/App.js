@@ -16,13 +16,12 @@ import { getData } from './redux/actions/getData';
 import ConstrutionTime from './pages/ConstrutionTime';
 
 const App = (props) => {
-  const permissson = process.env.NODE_ENV
 
   props.getData()
 
   return(
     <Router>
-      { (permissson === 'development') ?
+      {(process.env.NODE_ENV === 'development') ?
       <Switch>
         <Route exact path='/' component={Intro}/>
         <Route path='/home' component={Home}/>
