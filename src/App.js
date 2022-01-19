@@ -22,18 +22,18 @@ const App = (props) => {
 
   return(
     <Router>
-      { (permissson !== 'development') ?
-        <Switch>
-          <Route exact path='/' component={ConstrutionTime}/>
-        </Switch>
-      :<Switch>
+      { (permissson === 'development') ?
+      <Switch>
         <Route exact path='/' component={Intro}/>
         <Route path='/home' component={Home}/>
         <Route path='/data' component={DataPage}/>
         <Route path='/analysis' component={AnalysisPage}/>
         <Route path='/loginpage' component={LoginPage}/>
         <Route path='/signup' component={SignUp}/>
-      </Switch>
+      </Switch>:
+      <Switch>
+          <Route exact path='/' component={ConstrutionTime}/>
+        </Switch>
       }
     </Router>
   )
