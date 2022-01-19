@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,7 +17,12 @@ import ConstrutionTime from './pages/ConstrutionTime';
 
 const App = (props) => {
 
-  props.getData()
+  
+  useEffect(
+    () => {
+      props.getData()
+    },[]
+  )
 
   return(
     <Router>
