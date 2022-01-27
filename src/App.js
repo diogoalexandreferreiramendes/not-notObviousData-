@@ -14,22 +14,21 @@ import SignUp from './pages/SignUp';
 import Intro from './pages/Intro';
 import { getData } from './redux/actions/getData';
 import ConstrutionTime from './pages/ConstrutionTime';
-import url from 'url';
+
 
 
 const App = (props) => {
 
-
+  const developmentEnviroment = false 
   
   useEffect(
     () => {
       props.getData()
-    },[]
-  )
+    },[])
 
   return(
     <Router>
-      {(window.location.hostname === "localhost") ?
+      {(window.location.hostname === "localhost" || developmentEnviroment) ?
       <Switch>
         <Route exact path='/' component={Intro}/>
         <Route path='/home' component={Home}/>
