@@ -14,6 +14,7 @@ import SignUp from './pages/SignUp';
 import Intro from './pages/Intro';
 import { getData } from './redux/actions/getData';
 import ConstrutionTime from './pages/ConstrutionTime';
+require('dotenv').config()
 
 
 

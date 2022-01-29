@@ -14,3 +14,21 @@
 #todayDataFirst{
     
 }
+
+.trendingTokens{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+.trendingTokens p{
+    flex: 1;
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.trendingTokens a{
+    text-decoration: none;
+    color: black;
+}
