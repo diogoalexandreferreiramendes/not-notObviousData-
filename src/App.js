@@ -20,7 +20,7 @@ require('dotenv').config()
 
 const App = (props) => {
 
-  const developmentEnviroment = false 
+  const developmentEnviroment = true 
   
   useEffect(
     () => {
