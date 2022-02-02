@@ -15,6 +15,7 @@ import Intro from './pages/Intro';
 import { getData } from './redux/actions/getData';
 import ConstrutionTime from './pages/ConstrutionTime';
 import DashBoard from './pages/DashBoard';
+import PrivateRoute from './components/PrivateRoute';
 require('dotenv').config()
 
 
@@ -38,7 +39,7 @@ const App = (props) => {
         <Route path='/analysis' component={AnalysisPage}/>
         <Route path='/loginpage' component={LoginPage}/>
         <Route path='/signup' component={SignUp}/>
-        <Route path='/dashboard' component={DashBoard}/>
+        <PrivateRoute path='/dashboard' component={DashBoard}/>
       </Switch>:
       <Switch>
           <Route exact path='/' component={ConstrutionTime}/>
