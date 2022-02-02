@@ -1,12 +1,15 @@
 import React from "react";
 import './SignUp.css';
 import {useForm} from "react-hook-form";
+import { login } from "../firebase";
 
 const LoginPage = () => {
     const {register, handleSubmit} = useForm()
 
-    const onSubmit = (data) => {
-        console.log(data)
+    const onSubmit = async (data) => {
+        
+        await login(data.email, data.password)
+
     }
 
     return (
@@ -15,7 +18,7 @@ const LoginPage = () => {
                 <form onSubmit={handleSubmit(onSubmit)} id="signUpForm">
                     <fieldset>
                         <h1> Login </h1>
-                        <input placeholder="username" {...register("username", { required: true, maxLength: 20})} />
+                        <input placeholder="email" {...register("email", { required: true, maxLength: 20})} />
                         <input type="password" placeholder="password" {...register("password", {required: true, maxLength:20})}/>
                         <input type="submit" value="Submit"/>
                     </fieldset>
