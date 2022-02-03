@@ -37,6 +37,10 @@ input{
     font-size: 13px;
 }
 
+#linkSignup a{
+    text-decoration: none;
+}
+
 /* .divSignup{
     position:absolute;
     top:50%;
