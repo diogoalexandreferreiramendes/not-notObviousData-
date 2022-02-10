@@ -54,9 +54,6 @@ export const TodayData = () => {
 
     return (
         <div>
-            <div>
-                <h1 id="todayDatatitle">Today's Data</h1>
-            </div>
             <div className="todayDataLayout">
                 <div id="todayDataFirst">
                     <h3>News</h3>
