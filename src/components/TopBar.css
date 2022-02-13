@@ -27,3 +27,11 @@
 #topLastNavBarData{
     text-align: center;
 }
+
+/* Mobile */
+
+@media only screen and (max-width: 1350px) {
+    .topnavbardiv{
+        display: none;
+    }
+}

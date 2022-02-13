@@ -5,7 +5,7 @@ import { signup } from '../firebase';
 import { Link, useHistory } from 'react-router-dom';
 import { Alert } from 'react-bootstrap';
 import validator from 'validator'
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const SignUp = () => {
     const {register, handleSubmit} = useForm();

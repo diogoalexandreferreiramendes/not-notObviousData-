@@ -48,16 +48,16 @@ const MainTokens = (props) => {
             <div className="SubMainTokensDiv">
                 <div className="TokensDivToken">
                     <p><b># Name</b></p>
-                    <p>1 {name[0]} {sigla[0]}</p>
-                    <p>2 {name[1]} {sigla[1]}</p>
-                    <p>3 {name[2]} {sigla[2]}</p>
-                    <p>4 {name[3]} {sigla[3]}</p>
-                    <p>5 {name[4]} {sigla[4]}</p>
-                    <p>6 {name[5]} {sigla[5]}</p>
-                    <p>7 {name[6]} {sigla[6]}</p>
-                    <p>8 {name[7]} {sigla[7]}</p>
-                    <p>9 {name[8]} {sigla[8]}</p>
-                    <p>10 {name[9]} {sigla[9]}</p>
+                    <p>1 <span className="tokenName">{name[0]}</span> {sigla[0]}</p>
+                    <p>2 <span className="tokenName">{name[1]}</span> {sigla[1]}</p>
+                    <p>3 <span className="tokenName">{name[2]}</span> {sigla[2]}</p>
+                    <p>4 <span className="tokenName">{name[3]}</span> {sigla[3]}</p>
+                    <p>5 <span className="tokenName">{name[4]}</span> {sigla[4]}</p>
+                    <p>6 <span className="tokenName">{name[5]}</span> {sigla[5]}</p>
+                    <p>7 <span className="tokenName">{name[6]}</span> {sigla[6]}</p>
+                    <p>8 <span className="tokenName">{name[7]}</span> {sigla[7]}</p>
+                    <p>9 <span className="tokenName">{name[8]}</span> {sigla[8]}</p>
+                    <p>10 <span className="tokenName">{name[9]}</span> {sigla[9]}</p>
                 </div>
                 <div className="TokensDivPrice">
                     <p><b>Price</b></p>

@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useEffect } from 'react'
+import React, { useState ,useEffect } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -22,16 +22,27 @@ require('dotenv').config()
 
 const App = (props) => {
 
+  const getWindowDimensions = () => {
+    const { innerWidth: width, innerHeight: height } = window;
+    return{
+      width,
+      height
+    }
+  }
+
   const developmentEnviroment = false 
   
   useEffect(
     () => {
       props.getData()
+      getWindowDimensions()
     },[])
+
+    //
 
   return(
     <Router>
-      {(window.location.hostname === "localhost" || developmentEnviroment) ?
+      {(window.location.hostname === "localhost" || ((getWindowDimensions().width > 1024) || developmentEnviroment)) ?
       <Switch>
         <Route exact path='/' component={Intro}/>
         <Route path='/home' component={Home}/>
