@@ -12,42 +12,50 @@ const LoginPage = () => {
     const [error, setError] = useState("");
     const [gotosignup, setGotosignup] = useState(false)
 
-    const redirect = () => {
-        history.push("/dashboard")
+    // const redirect = () => {
+    //     history.push("/dashboard")
+    // }
+
+    //this should be the one tho use, but for now 
+    // on the inputs the onClick are not good!
+    // const onSubmit = async (data, e) => {
+
+    //     if(!(validator.isEmail(data.email))){
+    //         setError('Thats not a email')
+    //         e.target.reset(data)
+    //         return
+    //     }
+
+    //     try{
+    //         await login(data.email, data.password)
+    //         e.target.reset(data)
+    //         redirect()
+    //     }catch(error){
+    //         if(error.message === 'Firebase: Error (auth/user-not-found).'){
+    //             setError('Email not found, go to signup')
+    //             setGotosignup(true)
+    //             e.target.reset(data)
+    //             return
+    //         }
+    //         if(error.message === 'Firebase: Error (auth/wrong-password).'){
+    //             setError('Password is wrong')
+    //             e.target.reset(data)
+    //             return
+    //         }
+    //     }
+    // }
+
+    const workingOn = (e) => {
+        e.preventDefault()
+        setError('This functionality it still not possible')
     }
 
-
-    const onSubmit = async (data, e) => {
-
-        if(!(validator.isEmail(data.email))){
-            setError('Thats not a email')
-            e.target.reset(data)
-            return
-        }
-
-        try{
-            await login(data.email, data.password)
-            e.target.reset(data)
-            redirect()
-        }catch(error){
-            if(error.message === 'Firebase: Error (auth/user-not-found).'){
-                setError('Email not found, go to signup')
-                setGotosignup(true)
-                e.target.reset(data)
-                return
-            }
-            if(error.message === 'Firebase: Error (auth/wrong-password).'){
-                setError('Password is wrong')
-                e.target.reset(data)
-                return
-            }
-        }
-    }
+    //note on the form should be onSubmit(handleSubmit) in instead onClick 
 
     return (
         <div className="divSuperInput">
             <div className="divSignup">
-                <form onSubmit={handleSubmit(onSubmit)} id="signUpForm">
+                <form onClick={(e) => workingOn(e)} id="signUpForm">
                     <fieldset>
                         <h1> Login </h1>
                         {error && <Alert variant="danger">{error}</Alert>}

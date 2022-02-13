@@ -5,7 +5,7 @@ import { signup } from '../firebase';
 import { Link, useHistory } from 'react-router-dom';
 import { Alert } from 'react-bootstrap';
 import validator from 'validator'
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const SignUp = () => {
     const {register, handleSubmit} = useForm();
@@ -13,51 +13,57 @@ const SignUp = () => {
     const [gotologin, setGotologin] = useState(false)
     let history = useHistory()
 
-    const redirect = () => {
-        history.push("/dashboard")
-    }
+    // const redirect = () => {
+    //     history.push("/dashboard")
+    // }
 
-    const onSubmit = async (data, e) => {
-        const email = data.email
-        const password = data.password
-        const repeatpassword = data.repeatpassword
+    // const onSubmit = async (data, e) => {
+    //     const email = data.email
+    //     const password = data.password
+    //     const repeatpassword = data.repeatpassword
 
 
-        if(!(validator.isEmail(email))){
-            setError('Thats not a email')
-            e.target.reset(data)
-            return
-        }
+    //     if(!(validator.isEmail(email))){
+    //         setError('Thats not a email')
+    //         e.target.reset(data)
+    //         return
+    //     }
 
-        if(!(password && repeatpassword)){
-            setError('The passwords are diferent')
-            e.target.reset(data)
-            return
-        }
+    //     if(!(password && repeatpassword)){
+    //         setError('The passwords are diferent')
+    //         e.target.reset(data)
+    //         return
+    //     }
 
-        if((password.length < 7)){
-            setError('Your password is small')
-            e.target.reset(data)
-            return
-        }
+    //     if((password.length < 7)){
+    //         setError('Your password is small')
+    //         e.target.reset(data)
+    //         return
+    //     }
 
-        try{
-            await signup( email, password)
-            e.target.reset(data)
-            redirect()
-        }catch(err) {
-            setError("This Email is already register")
-            setGotologin(true)
-            e.target.reset(data)
-            return
-        }
+    //     try{
+    //         await signup( email, password)
+    //         e.target.reset(data)
+    //         redirect()
+    //     }catch(err) {
+    //         setError("This Email is already register")
+    //         setGotologin(true)
+    //         e.target.reset(data)
+    //         return
+    //     }
 
+    // }
+
+    //note on the form should be onSubmit in instead onClick 
+    const workingOn = (e) => {
+        e.preventDefault()
+        setError('This functionality it still not possible')
     }
 
     return (
         <div className="divSuperInput">
             <div className="divSignup">
-                <form onSubmit={handleSubmit(onSubmit)} id="signUpForm">
+                <form onClick={(e) => workingOn(e)} id="signUpForm">
                     <fieldset>
                         <h1> Sign up </h1>
                         {error && <Alert variant="danger">{error}</Alert>}

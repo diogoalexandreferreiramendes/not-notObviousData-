@@ -15,6 +15,7 @@ const Intro = () => {
         <div className="mainIntro">
             <div className="introPage">
                 <h1>Welcome to the not obvious data</h1>
+                <p> The webapp about Crypto Data </p>
                 <p>  <FontAwesomeIcon icon={faExclamationTriangle}/> BE CAREFUL THIS IS NOT FINANCIAL ADVICE <FontAwesomeIcon icon={faExclamationTriangle}/></p>
                 <button onClick={redirect}>Click me</button>
             </div>
