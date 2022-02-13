@@ -9,8 +9,8 @@ const ConstrutionTime = () => {
         <div className="mainIntro_Constrution">
             <div className="introPage_Constrution">
                 <h1>Welcome to the not obvious data</h1>
-                <p>  <FontAwesomeIcon icon={faExclamationTriangle}/> BE CAREFUL THIS IS NOT FINANCIAL ADVICE <FontAwesomeIcon icon={faExclamationTriangle}/></p>
-                <p>WE ARE CONSTRUCTING nod, THANK YOU AND HAVE A NICE DAY</p>
+                <p><FontAwesomeIcon icon={faExclamationTriangle}/> WE ARE CONSTRUCTING nod, THANK YOU AND HAVE A NICE DAY</p> <FontAwesomeIcon icon={faExclamationTriangle}/>
+                <p> Try in the Desktop </p>
             </div>
         </div>
     )

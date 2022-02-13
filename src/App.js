@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState ,useEffect } from 'react'
+import React, { useEffect } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -38,11 +38,10 @@ const App = (props) => {
       getWindowDimensions()
     },[])
 
-    //
 
   return(
     <Router>
-      {(window.location.hostname === "localhost" || ((getWindowDimensions().width > 1024) || developmentEnviroment)) ?
+      {(  ((getWindowDimensions().width > 1024) || developmentEnviroment)) ?
       <Switch>
         <Route exact path='/' component={Intro}/>
         <Route path='/home' component={Home}/>
