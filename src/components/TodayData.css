@@ -40,3 +40,8 @@
 #negativo{
     color: red
 }
+
+.makertAll{
+    display: flex;
+    align-items: center;
+}

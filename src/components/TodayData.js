@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import './TodayData.css'
-import imageBackground from '../images/imageBackground.jpg'
 import axios from 'axios'
+import {data} from './gifts.js'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExclamationTriangle }  from '@fortawesome/free-solid-svg-icons';
+import {faArrowDown, faArrowUp}  from '@fortawesome/free-solid-svg-icons';
 const dotenv = require('dotenv');
 
 export const TodayData = () => {
@@ -41,11 +41,18 @@ export const TodayData = () => {
             })
         }
 
+        const randomNumber = () => {
+            setRandomNumber(Math.floor(Math.random() * 10))
+        }
+
         
         getTrendingData()
         getNews()
         getMarketData()
+        randomNumber()
     },[])
+
+    const [randomNumber, setRandomNumber] = useState('')
 
     const [trendingOne, setTrendingOne] = useState('')
     const [trendingTwo, setTrendingTwo] = useState('')
@@ -73,9 +80,6 @@ export const TodayData = () => {
     const [marketCapChange, setMarketCapChange] = useState('')
     const [marketValue, setMarketValue] = useState('')
 
-    const getFun = () => {
-        console.log(marketCapChange)
-    }
 
     return (
         <div>
@@ -102,18 +106,24 @@ export const TodayData = () => {
                     <h3>Makert Cap: </h3>
                     {marketCapChange > 0 ? 
                     <>
-                    <div class="makertcappositiva">
-                        <h3>{marketValue}</h3>
-                        <p>(<span id="positivo">{marketCapChange}</span>%) hoje</p>
+                    <div className="makertcappositiva">
+                        <h1>{marketValue}</h1>
+                        <div className="makertAll">
+                            <p><FontAwesomeIcon icon={faArrowUp} /></p>
+                            <p>(<span id="positivo">{marketCapChange}</span>%) Today</p>
+                        </div>
                     </div>
                     </>
                     :
-                    <div class="makertcapnegative">
-                        <h3>{marketValue}</h3>
-                        <p>(- <span id="negativo">{marketCapChange}</span>)% hoje</p>
-                        <FontAwesomeIcon icon={faExclamationTriangle}/>
+                    <div className="makertcapnegative">
+                        <h1>{marketValue}</h1>
+                        <div className="makertAll">
+                            <p><FontAwesomeIcon icon={faArrowDown} /></p>
+                            <p>(-<span id="negativo">{marketCapChange}</span>%) Today</p>
+                        </div>
                     </div>
                     }
+                    <iframe src={data[randomNumber]}width="350" height="260" frameBorder="0" className="giphy-embed" title="gifts_stocks"></iframe>
                 </div>
             </div>
         </div>
