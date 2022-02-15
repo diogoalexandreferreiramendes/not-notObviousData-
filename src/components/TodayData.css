@@ -32,3 +32,11 @@
     text-decoration: none;
     color: black;
 }
+
+#positivo{
+    color: green
+}
+
+#negativo{
+    color: red
+}

@@ -2,8 +2,9 @@ import React, {useEffect, useState} from 'react'
 import './TodayData.css'
 import imageBackground from '../images/imageBackground.jpg'
 import axios from 'axios'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExclamationTriangle }  from '@fortawesome/free-solid-svg-icons';
 const dotenv = require('dotenv');
-
 
 export const TodayData = () => {
 
@@ -31,8 +32,19 @@ export const TodayData = () => {
                 setLinkThree(data.data[2].url)
             })
         }
+        const getMarketData = () => {
+            axios.get('https://api.coingecko.com/api/v3/global')
+            .then(res => {
+                const {data} = res
+                setMarketCapChange(data.data.market_cap_change_percentage_24h_usd.toFixed(2))
+                setMarketValue(formatValue(data.data.updated_at))
+            })
+        }
+
+        
         getTrendingData()
         getNews()
+        getMarketData()
     },[])
 
     const [trendingOne, setTrendingOne] = useState('')
@@ -40,6 +52,12 @@ export const TodayData = () => {
     const [trendingThree, setTrendingThree] = useState('')
     const [trendingFour, setTrendingFour] = useState('')
     const [trendingFive, setTrendingFive] = useState('')
+
+    const formatValue = (x) => {
+        const valor = x.toString().split(".")
+        valor[0] = valor[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return(valor)
+    }
 
     // news 
 
@@ -50,7 +68,14 @@ export const TodayData = () => {
     const [newsThree, setNewsThree] = useState('')
     const [linkThree, setLinkThree] = useState('')
 
+    // 
 
+    const [marketCapChange, setMarketCapChange] = useState('')
+    const [marketValue, setMarketValue] = useState('')
+
+    const getFun = () => {
+        console.log(marketCapChange)
+    }
 
     return (
         <div>
@@ -74,8 +99,21 @@ export const TodayData = () => {
                     </div>
                 </div>
                 <div id="todayDataLast">
-                    <h3> Market Cap Graph</h3>
-                    <img src={imageBackground} alt="imageBackground" width="75%"/>
+                    <h3>Makert Cap: </h3>
+                    {marketCapChange > 0 ? 
+                    <>
+                    <div class="makertcappositiva">
+                        <h3>{marketValue}</h3>
+                        <p>(<span id="positivo">{marketCapChange}</span>%) hoje</p>
+                    </div>
+                    </>
+                    :
+                    <div class="makertcapnegative">
+                        <h3>{marketValue}</h3>
+                        <p>(- <span id="negativo">{marketCapChange}</span>)% hoje</p>
+                        <FontAwesomeIcon icon={faExclamationTriangle}/>
+                    </div>
+                    }
                 </div>
             </div>
         </div>
