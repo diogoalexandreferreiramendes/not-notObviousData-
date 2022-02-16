@@ -4,7 +4,6 @@ import axios from 'axios'
 import {data} from './gifts.js'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faArrowDown, faArrowUp}  from '@fortawesome/free-solid-svg-icons';
-const dotenv = require('dotenv');
 
 export const TodayData = () => {
 

@@ -1,0 +1,26 @@
+.DashBoardDiv{
+    padding: 0px 30px;
+}
+
+.AnalysisDiv{
+    display: flex;
+    width: 200px;
+    height: 100px;
+    background: red;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+#AnalysisDivGreen{
+    background: green;
+    color:white
+}
+
+.AnalysisDiv p{
+    text-align: center;
+}
+
+.envirmentanalysis p{
+    padding: 15px 0px;
+}
